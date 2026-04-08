@@ -1,0 +1,3 @@
+[submodule "engine"]
+	path = engine
+	url = https://github.com/murillogplay/gankdev-ia-game-engine
