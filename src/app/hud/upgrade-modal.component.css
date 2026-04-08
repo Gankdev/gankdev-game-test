@@ -1,0 +1,43 @@
+.modal-backdrop {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+  z-index: 30;
+}
+.modal-box {
+  background: linear-gradient(135deg, #0f0f2a, #1a1a3e);
+  border: 2px solid rgba(255,215,0,0.4);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,215,0,0.15);
+  max-width: 560px;
+  width: 90%;
+}
+.modal-title { color: #ffd700; font-size: 22px; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px; }
+.modal-sub   { color: #aaa; font-size: 13px; margin-bottom: 24px; }
+
+.cards-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.upgrade-card {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 20px 16px;
+  width: 150px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  color: #fff;
+}
+.upgrade-card:hover {
+  background: rgba(255,215,0,0.12);
+  border-color: rgba(255,215,0,0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.2);
+}
+.card-icon { font-size: 32px; }
+.card-name { font-size: 14px; font-weight: 700; color: #fff; }
+.card-desc { font-size: 11px; color: #aaa; text-align: center; line-height: 1.4; }

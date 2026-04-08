@@ -1,0 +1,41 @@
+.go-backdrop {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+  z-index: 30;
+}
+.go-box {
+  background: linear-gradient(135deg, #0f0f1a, #1a0f1a);
+  border: 2px solid rgba(255,50,50,0.4);
+  border-radius: 16px;
+  padding: 40px 48px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(255,50,50,0.15);
+  min-width: 320px;
+}
+.go-title { color: #ff4444; font-size: 28px; font-weight: 800; letter-spacing: 3px; margin-bottom: 28px; }
+
+.go-stats { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.go-row { display: flex; justify-content: space-between; align-items: center; gap: 48px; }
+.go-key { color: #aaa; font-size: 14px; }
+.go-val { color: #fff; font-size: 18px; font-weight: 700; }
+
+.restart-btn {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: 1px;
+}
+.restart-btn:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239,68,68,0.35);
+}

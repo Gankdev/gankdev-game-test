@@ -1,0 +1,11 @@
+<div class="go-backdrop">
+  <div class="go-box">
+    <h2 class="go-title">💀 GAME OVER</h2>
+    <div class="go-stats">
+      <div class="go-row"><span class="go-key">⏱ Sobreviveu</span><span class="go-val">{{ formattedTime }}</span></div>
+      <div class="go-row"><span class="go-key">💀 Mortos</span><span class="go-val">{{ data.kills }}</span></div>
+      <div class="go-row"><span class="go-key">⭐ Nível</span><span class="go-val">{{ data.level }}</span></div>
+    </div>
+    <button class="restart-btn" (click)="restart.emit()">🔄 Jogar Novamente</button>
+  </div>
+</div>

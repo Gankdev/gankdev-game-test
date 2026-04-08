@@ -1,0 +1,79 @@
+<div class="hud-root">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="left-stats">
+      <!-- HP -->
+      <div class="stat-group">
+        <span class="stat-label">❤️ {{ hp() }} / {{ maxHp() }}</span>
+        <div class="bar-track">
+          <div class="bar-fill hp-bar" [style.width.%]="hpPct" [style.background]="hpColor"></div>
+        </div>
+      </div>
+      <!-- XP -->
+      <div class="stat-group">
+        <span class="stat-label">⭐ Nível {{ level() }}</span>
+        <div class="bar-track">
+          <div class="bar-fill xp-bar" [style.width.%]="xpPct"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-stats">
+      <span class="timer">⏱ {{ formattedTime }}</span>
+    </div>
+
+    <div class="right-stats">
+      <span class="kills">💀 {{ kills() }}</span>
+    </div>
+  </div>
+
+  <!-- ELITE HP BAR -->
+  @if (eliteHp()) {
+    <div class="elite-bar-wrap">
+      <span class="elite-label">👹 ELITE</span>
+      <div class="bar-track elite-track">
+        <div class="bar-fill elite-fill"
+          [style.width.%]="(eliteHp()!.current / eliteHp()!.max) * 100">
+        </div>
+      </div>
+      <span class="elite-hp-text">{{ eliteHp()!.current | number:'1.0-0' }} / {{ eliteHp()!.max }}</span>
+    </div>
+  }
+
+  <!-- PAUSE OVERLAY -->
+  @if (paused() && !showUpgrade() && !showGameOver()) {
+    <div class="pause-overlay">
+      <div class="pause-box">
+        <p class="pause-title">PAUSADO</p>
+        <p class="pause-hint">ESC / P para continuar</p>
+      </div>
+    </div>
+  }
+
+  <!-- BOTTOM BAR: weapons -->
+  <div class="bottom-bar">
+    <div class="weapons-row">
+      @for (w of weapons(); track w) {
+        <div class="weapon-chip">{{ weaponIcon(w) }}</div>
+      }
+    </div>
+  </div>
+
+  <!-- UPGRADE MODAL -->
+  @if (showUpgrade()) {
+    <app-upgrade-modal
+      [data]="upgradeData()!"
+      (chosen)="onUpgradeChosen($event)">
+    </app-upgrade-modal>
+  }
+
+  <!-- GAME OVER -->
+  @if (showGameOver()) {
+    <app-game-over
+      [data]="gameOverData()!"
+      (restart)="onRestart()">
+    </app-game-over>
+  }
+
+</div>

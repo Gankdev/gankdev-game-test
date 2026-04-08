@@ -1,0 +1,15 @@
+<div class="modal-backdrop">
+  <div class="modal-box">
+    <h2 class="modal-title">⭐ NÍVEL {{ data.level }} ALCANÇADO!</h2>
+    <p class="modal-sub">Escolha um upgrade</p>
+    <div class="cards-row">
+      @for (u of data.upgrades; track u.id) {
+        <button class="upgrade-card" (click)="select(u)">
+          <span class="card-icon">{{ u.icon }}</span>
+          <span class="card-name">{{ u.name }}</span>
+          <span class="card-desc">{{ u.description }}</span>
+        </button>
+      }
+    </div>
+  </div>
+</div>
